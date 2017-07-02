@@ -2,16 +2,12 @@ using System.IO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration.EnvironmentVariables;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using WideWorldImporters.SalesService.App.Models;
 using WideWorldImporters.SalesService.App.Services;
 using WideWorldImporters.SalesService.App.Context;
 using System;
 using System.Reflection;
 using Microsoft.Extensions.Options;
-using WideWorldImporters.Common.Lib.Dto.Order;
 using AutoMapper;
 using WideWorldImporters.SalesService.App.Workers;
 

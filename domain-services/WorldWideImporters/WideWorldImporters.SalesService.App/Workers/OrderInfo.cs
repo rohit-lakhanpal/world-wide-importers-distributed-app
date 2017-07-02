@@ -8,7 +8,6 @@ using WideWorldImporters.Common.Lib.Dto.Order;
 using WideWorldImporters.SalesService.App.Helpers;
 using WideWorldImporters.SalesService.App.Models;
 using WideWorldImporters.SalesService.App.Services;
-using System;
 
 namespace WideWorldImporters.SalesService.App.Workers
 {

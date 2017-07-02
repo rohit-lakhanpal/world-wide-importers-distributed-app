@@ -4,17 +4,13 @@ using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using WideWorldImporters.Common.Lib.Common;
 using WideWorldImporters.Common.Lib.Dto.Base;
-using WideWorldImporters.SalesService.App.Context;
 using WideWorldImporters.SalesService.App.Models;
-using WideWorldImporters.SalesService.App.Services;
 
 namespace WideWorldImporters.SalesService.App
 {

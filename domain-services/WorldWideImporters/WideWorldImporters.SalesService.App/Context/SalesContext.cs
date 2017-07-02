@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using WideWorldImporters.SalesService.App.Entities;
 using WideWorldImporters.SalesService.App.Models;
