@@ -13,6 +13,7 @@ using System.Reflection;
 using Microsoft.Extensions.Options;
 using WideWorldImporters.Common.Lib.Dto.Order;
 using AutoMapper;
+using WideWorldImporters.SalesService.App.Workers;
 
 namespace WideWorldImporters.SalesService.App
 {
@@ -45,9 +46,8 @@ namespace WideWorldImporters.SalesService.App
             ConfigureServices(serviceCollection);
 
             // check startup criteria met
-            var x = serviceProvider.GetService<IOptions<AppSettings>>().Value as AppSettings;
-            //serviceProvider.
-            CheckStartupCriteria(x);
+            var appSettings = serviceProvider.GetService<IOptions<AppSettings>>().Value as AppSettings;            
+            CheckStartupCriteria(appSettings);
 
             // run app
             serviceProvider.GetService<App>().Run();
@@ -90,8 +90,9 @@ namespace WideWorldImporters.SalesService.App
             serviceCollection.AddOptions();
             serviceCollection.Configure<AppSettings>(configuration.GetSection("WwiSalesServiceConfiguration"));
 
-            // add services
+            // add services & workers
             serviceCollection.AddTransient<IOrdersQueryRepositoryService, OrdersQueryRepositoryService>();
+            serviceCollection.AddTransient<OrderInfo>();
             serviceCollection.AddDbContext<SalesContext>();
 
             // add app

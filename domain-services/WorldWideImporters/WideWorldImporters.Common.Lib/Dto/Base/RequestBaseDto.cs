@@ -1,31 +1,13 @@
-﻿using System;
-
-namespace WideWorldImporters.Common.Lib.Dto.Base
+﻿namespace WideWorldImporters.Common.Lib.Dto.Base
 {
     public class RequestBaseDto
     {
         /// <summary>
-        /// Gets or sets the request identifier.
+        /// Gets or sets the header.
         /// </summary>
         /// <value>
-        /// The request identifier.
+        /// The header.
         /// </value>
-        public string RequestId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the requested at.
-        /// </summary>
-        /// <value>
-        /// The requested at.
-        /// </value>
-        public DateTime RequestedAt { get; set; }
-
-        /// <summary>
-        /// Gets or sets the requested by.
-        /// </summary>
-        /// <value>
-        /// The requested by.
-        /// </value>
-        public string RequestedBy { get; set; }
+        public RequestBaseHeaderDto Header { get; set; }
     }
 }

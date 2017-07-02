@@ -2,16 +2,8 @@
 
 namespace WideWorldImporters.Common.Lib.Dto.Order
 {
-    public class OrderInfoRequestDto
+    public class OrderInfoRequestDto: RequestBaseDto
     {
-        /// <summary>
-        /// Gets or sets the header.
-        /// </summary>
-        /// <value>
-        /// The header.
-        /// </value>
-        public RequestBaseDto Header { get; set; }
-
         /// <summary>
         /// Gets or sets the body.
         /// </summary>

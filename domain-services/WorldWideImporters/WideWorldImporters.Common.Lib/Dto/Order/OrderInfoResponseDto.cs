@@ -5,16 +5,8 @@ namespace WideWorldImporters.Common.Lib.Dto.Order
     /// <summary>
     /// 
     /// </summary>
-    public class OrderInfoResponseDto
+    public class OrderInfoResponseDto: ResponseBaseDto
     {
-        /// <summary>
-        /// Gets or sets the header.
-        /// </summary>
-        /// <value>
-        /// The header.
-        /// </value>
-        public ResponseBaseDto Header { get; set; }
-
         /// <summary>
         /// Gets or sets the body.
         /// </summary>

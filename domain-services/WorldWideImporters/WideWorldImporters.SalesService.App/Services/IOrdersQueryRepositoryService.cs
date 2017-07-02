@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -24,7 +25,7 @@ namespace WideWorldImporters.SalesService.App.Services
         /// </summary>
         /// <param name="orderId">The order identifier.</param>
         /// <returns></returns>
-        Task<IEnumerable<OrderDto>> GetOrder(int orderId);
+        OrderDto GetOrder(int orderId);
 
         /// <summary>
         /// Gets the order.
@@ -65,28 +66,17 @@ namespace WideWorldImporters.SalesService.App.Services
         public SalesContext _salesContext { get; set; }
 
 
-        ///// <summary>
-        ///// Initializes a new instance of the <see cref="OrdersQueryRepositoryService" /> class.
-        ///// </summary>
-        ///// <param name="logger">The logger.</param>
-        ///// <param name="salesContext">The sales context.</param>
-        //public OrdersQueryRepositoryService(ILogger<OrdersQueryRepositoryService> logger, SalesContext salesContext, IOptions<AppSettings> config, ILogger<SalesContext> salesLogger)
-        //{
-        //    _logger = logger;
-        //    _salesContext = salesContext;
-        //    _salesLogger = salesLogger;
-        //    _config = config;
-        //}
+        private readonly IServiceProvider _provider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrdersQueryRepositoryService" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="salesContext">The sales context.</param>
-        public OrdersQueryRepositoryService(ILogger<OrdersQueryRepositoryService> logger, SalesContext salesContext)
+        public OrdersQueryRepositoryService(ILogger<OrdersQueryRepositoryService> logger, IServiceProvider provider)
         {
             _logger = logger;
-            _salesContext = salesContext;           
+            _provider = provider;           
         }
 
         /// <summary>
@@ -94,17 +84,20 @@ namespace WideWorldImporters.SalesService.App.Services
         /// </summary>
         /// <param name="orderId">The order identifier.</param>
         /// <returns></returns>
-        public async Task<IEnumerable<OrderDto>> GetOrder(int orderId)
+        public OrderDto GetOrder(int orderId)
         {
-            var orders = new List<OrderDto>();
-            using (var context = new SalesContext(_config, _salesLogger))
-            {
-                var order = await context.Orders.FindAsync(orderId);
+            OrderDto dto = null;
 
-                var dto = Mapper.Map<OrderDto>(order);
-                orders.Add(dto);
+            var scopeFactory = _provider.GetRequiredService<IServiceScopeFactory>();
+            using (var scope = scopeFactory.CreateScope())
+            using (var context = scope.ServiceProvider.GetRequiredService<SalesContext>())
+            {
+                var model = context.Orders.Find(orderId);
+                var modelJson = JsonConvert.SerializeObject(model);
+                dto = JsonConvert.DeserializeObject<OrderDto>(modelJson);
+                //dto = Mapper.Map<OrderDto>(model); //TODO: use automapper
             }
-            return orders;
+            return dto;
         }
 
         /// <summary>

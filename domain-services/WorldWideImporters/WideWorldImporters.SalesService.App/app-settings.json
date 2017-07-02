@@ -2,9 +2,9 @@
   "WwiSalesServiceConfiguration": {
     "ConsoleTitle": "Wide World Importers - Sales Service",
     "DatabaseConnectionString": "Data Source=localhost\\SQLEXPRESS;Initial Catalog=WideWorldImporters;User ID=wwi_sales_user;Password=pswd",
-    "QueueHost": "",
-    "QueuePassword": "",
-    "QueuePort": 0,
-    "QueueUserName": ""
+    "QueueHost": "localhost",
+    "QueuePassword": "guest",
+    "QueuePort": 5672,
+    "QueueUserName": "guest"
   }
 }

@@ -9,6 +9,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WideWorldImporters.SalesService.App", "WideWorldImporters.SalesService.App\WideWorldImporters.SalesService.App.csproj", "{1AA55C6B-A660-4E70-975F-EDB18C5E2A31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldWideImporters.SalesService.App.Test", "WorldWideImporters.SalesService.App.Test\WorldWideImporters.SalesService.App.Test.csproj", "{758DAED5-0753-40BE-94C2-20FF9EC0CD88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1AA55C6B-A660-4E70-975F-EDB18C5E2A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AA55C6B-A660-4E70-975F-EDB18C5E2A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AA55C6B-A660-4E70-975F-EDB18C5E2A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758DAED5-0753-40BE-94C2-20FF9EC0CD88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758DAED5-0753-40BE-94C2-20FF9EC0CD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758DAED5-0753-40BE-94C2-20FF9EC0CD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758DAED5-0753-40BE-94C2-20FF9EC0CD88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
