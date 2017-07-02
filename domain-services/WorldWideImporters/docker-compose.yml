@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  WideWorldImporters.SalesService.App:
+    image: WideWorldImporters.SalesService.App
+    build:
+      context: ./WideWorldImporters.SalesService.App
+      dockerfile: Dockerfile
+
+  wideworldimporters.salesservice.app:
+    image: wideworldimporters.salesservice.app
+    build:
+      context: ./WideWorldImporters.SalesService.App
+      dockerfile: Dockerfile
