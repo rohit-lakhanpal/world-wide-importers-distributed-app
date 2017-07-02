@@ -2,7 +2,10 @@
 
 namespace WideWorldImporters.Common.Lib.Dto.Order
 {
-    public class OrderInfoRequestDto
+    /// <summary>
+    /// 
+    /// </summary>
+    public class OrderInfoResponseDto
     {
         /// <summary>
         /// Gets or sets the header.
@@ -10,7 +13,7 @@ namespace WideWorldImporters.Common.Lib.Dto.Order
         /// <value>
         /// The header.
         /// </value>
-        public RequestBaseDto Header { get; set; }
+        public ResponseBaseDto Header { get; set; }
 
         /// <summary>
         /// Gets or sets the body.
@@ -18,6 +21,6 @@ namespace WideWorldImporters.Common.Lib.Dto.Order
         /// <value>
         /// The body.
         /// </value>
-        public OrderInfoRequestBodyDto Body { get; set; }
+        public OrderInfoResponseBodyDto Body { get; set; }
     }
 }

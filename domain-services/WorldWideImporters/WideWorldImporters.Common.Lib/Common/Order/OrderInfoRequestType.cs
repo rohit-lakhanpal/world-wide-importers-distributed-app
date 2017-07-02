@@ -1,4 +1,4 @@
-﻿namespace WideWorldImporters.Common.Lib.Dtp.Order
+﻿namespace WideWorldImporters.Common.Lib.Dto.Order
 {
     public enum OrderInfoRequestType
     {
